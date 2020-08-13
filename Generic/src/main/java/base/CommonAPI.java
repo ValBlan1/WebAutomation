@@ -1,5 +1,6 @@
 package base;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import reporting.TestLogger;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -31,10 +33,21 @@ public class CommonAPI {
 
 
 
-
-    @Parameters({"useCloudEnv", "cloudEnvName", "url", "os", "os_version", "browserName", "browserVersion"})
+    @Parameters({"url"})
     @BeforeMethod
-    public void setUp(@Optional String useCloudEnv, @Optional String cloudEnvName, @Optional String url,
+    public void setUp(@Optional("https://www.infinity.com/")  String url) {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\jesse\\IdeaProjects\\TeamProject\\Generic\\driver\\chromedriver.exe");
+
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get(url);
+    }
+ /*   @Parameters({"useCloudEnv", "cloudEnvName", "url", "os", "os_version", "browserName", "browserVersion"})
+    @BeforeMethod
+    public void setUp(@Optional String useCloudEnv, @Optional String cloudEnvName, @Optional("https://www.infinityauto.com/") String url,
                       @Optional String OS, @Optional String os_version, @Optional String browserName,
                       @Optional String browserVersion) throws IOException {
         if (useCloudEnv.equalsIgnoreCase("true")) {
@@ -46,7 +59,7 @@ public class CommonAPI {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
         driver.manage().window().maximize();
-    }
+    }*/
 
     public WebDriver getLocalDriver(String OS, String browserName) {
         if (OS.equalsIgnoreCase("OS X")) {
@@ -127,6 +140,20 @@ public class CommonAPI {
         }catch(Exception ex){
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
         }
+    }
+    public static String convertToString(String st) {
+        String splitString = "";
+        splitString = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(st), ' ');
+        return splitString;
+    }
+    public void clearInputField(String locator) {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        driver.findElement(By.cssSelector(locator)).clear();
+    }
+    public static List<WebElement> getListOfWebElementsByCss(String locator) {
+        List<WebElement> list = new ArrayList<WebElement>();
+        list = driver.findElements(By.cssSelector(locator));
+        return list;
     }
 
 }

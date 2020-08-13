@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Ebay Test Script" parallel="false">
+<suite name ="Infinity Test Script" parallel="false">
 
     <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
-    <parameter name="url" value="https://www.ebay.com/"></parameter>
+    <parameter name="url" value="https://www.infinityauto.com/"></parameter>
     <parameter name="os" value="Windows"/>
     <parameter name="os_version" value="10"/>
     <parameter name="browserName" value="Chrome"/>
     <parameter name="browserVersion" value="84.0"/>
 
-    <test name="Ebay Home">
+
+    <test name = "Infinity Home">
 
         <classes>
-           <class name="EbayTest.AllCategoriesTest"></class>
-            <class name="EbayTest.HomePage"></class>
-            <class name="EbayTest.SearchBar"></class>
-            <class name="EbayTest.ShoppingCart"></class>
+            <class name="home.HeadersTest"></class>
+
         </classes>
 
     </test>

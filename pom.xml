@@ -14,6 +14,8 @@
         <module>AutomationPractice</module>
         <module>Ebay</module>
         <module>NYP</module>
+        <module>Infinity</module>
+        <module>Amazon</module>
     </modules>
 
     <dependencyManagement>
