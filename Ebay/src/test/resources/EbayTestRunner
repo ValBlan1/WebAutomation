@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Walmart Test Script" parallel="false">
+<suite name="Ebay Test Script" parallel="false">
 
-    <!--    <parameter name="useCloudEnv" value="true"/>
-        <parameter name="cloudEnvName" value="browserstack"/>
-        <parameter name="os" value="Windows"/>
-        <parameter name="os_version" value="10"/>
-        <parameter name="browserName" value="Chrome"/>
-        <parameter name="browserVersion" value="84.0"/>-->
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="url" value="https://www.ebay.com/"></parameter>
+    <parameter name="os" value="Windows"/>
+    <parameter name="os_version" value="10"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="browserVersion" value="84.0"/>
 
-    <test name="Walmart Home">
+    <test name="Ebay Home">
 
         <classes>
             <class name="EbayTest.AllCategoriesTest"/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name ="NYP Test Script" parallel="false">
+
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <parameter name="url" value="https://nypost.com/"></parameter>
+    <parameter name="os" value="Windows"/>
+    <parameter name="os_version" value="10"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="browserVersion" value="84.0"/>
+
+
+    <test name = "NYP Practice Home">
+
+        <classes>
+            <class name="" />
+        </classes>
+
+    </test>
+
+</suite>

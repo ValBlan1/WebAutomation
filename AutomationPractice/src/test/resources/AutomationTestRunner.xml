@@ -3,13 +3,14 @@
 
 <suite name ="Automation Test Script" parallel="false">
 
-  <!--  <parameter name="useCloudEnv" value="true"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
+    <parameter name="url" value="http://automationpractice.com/index.php"></parameter>
     <parameter name="os" value="Windows"/>
     <parameter name="os_version" value="10"/>
     <parameter name="browserName" value="Chrome"/>
-    <parameter name="browserVersion" value="84.0"/>-->
-    <parameter name="url" value="http://automationpractice.com/index.php"></parameter>
+    <parameter name="browserVersion" value="84.0"/>
+
 
     <test name = "Automation Practice Home">
 

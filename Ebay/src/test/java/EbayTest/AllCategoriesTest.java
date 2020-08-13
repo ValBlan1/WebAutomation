@@ -1,18 +1,19 @@
 package EbayTest;
 
 
+import base.CommonAPI;
 import ebayTestCases.MainTestCases;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class AllCategoriesTest extends MainTestCases {
-    MainTestCases mainTestCases;
-
-    @BeforeMethod
-    public void  initialElements(){
-        mainTestCases = PageFactory.initElements(driver,MainTestCases.class);
-    }
 
     @Test
     public void TestAllCategories(){
